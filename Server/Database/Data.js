@@ -19,9 +19,6 @@ const connection = (username,password) =>{
 // }
 console.log('Database connected successfully')
 
-
-
-
 app.use((error, req, res, next) => {
     res.status(error.status || 500)
     res.json({

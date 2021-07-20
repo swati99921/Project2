@@ -18,19 +18,6 @@ const DefaultData = async()=>{
     }
 
  }
-// app.use((error, req, res, next) => {
-//     Product.insertMany(products);
-//     console.log('Data imporetd Sucessfully');
-//     res.status(error.status || 500)
-//     res.json({
-//         error : {
-//             message : error.message
-//         }
-//     })
-
-// })
-// }
-
 
 
 export default DefaultData;

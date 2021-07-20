@@ -1,12 +1,18 @@
+
+import {BrowserRouter,Switch,Route} from 'react-router-dom';
+
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
-import {BrowserRouter,Switch,Route} from 'react-router-dom';
 import Cart from './Components/Cart/Cart';
 
-import './App.css';
+import {TemplateProvider} from './templates/TemplateProvider'
+import ContextProvider from './context/contextProvider';
+
 
 function App() {
   return (
+    <TemplateProvider>
+      <ContextProvider>
     <BrowserRouter>
 
      <Header/>
@@ -17,6 +23,8 @@ function App() {
      </Switch>
      
      </BrowserRouter>
+     </ContextProvider>
+     </TemplateProvider>
   );
 }
 

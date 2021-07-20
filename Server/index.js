@@ -1,11 +1,10 @@
 
-
-// const express = require('express');
-// const {connection} = require('./Database/Data');
-
-// const dotenv = require('dotenv');
 import express from 'express';
 import dotenv from 'dotenv';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+
+import Routers from './routes/Routes.js';
 //import  connection from './Database/Data.js';
 //import data2 from './Database/data2.js';
 import DefaultData from './default.js';
@@ -13,6 +12,14 @@ import mongoose from 'mongoose';
 dotenv.config();
 
 const app = express();
+app.use(bodyParser.json({extended:true}))
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(cors());
+app.use('/', Routers);
+
+// app.use('/signup',()=>{
+//     //data store to database:
+// })
 const PORT = 8000;
 const username = process.env.DB_USERNAME;
 const password = process.env. DB_PASSWORD;
